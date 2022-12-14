@@ -40,6 +40,40 @@ namespace Tamagotchi.Controllers
       return View(foundCharacter);
     }
 
+    [HttpPost("/character/{id}")]
+    public ActionResult Feed(int id)
+    {
+      Character.Feed(id);
+      Character foundCharacter = Character.Find(id);
+      string strID = id.ToString();
+      return RedirectToAction(strID);
+    }
+
+    [HttpPost("/character/{id}")]
+    public ActionResult Play(int id)
+    {
+      Character.Play(id);
+      Character foundCharacter = Character.Find(id);
+      string strID = id.ToString();
+      return RedirectToAction(strID);
+    }
+
+    [HttpPost("/character/{id}")]
+    public ActionResult Nap(int id)
+    {
+      Character.Nap(id);
+      Character foundCharacter = Character.Find(id);
+      string strID = id.ToString();
+      return RedirectToAction(strID);
+    }
+
+    // [HttpGet("/character/{id}")]
+    // public ActionResult Show(int id)
+    // {
+    //   Item foundItem = Item.Find(id);
+    //   return View(foundItem);
+    // }
+
     // [HttpPost("/character/update")]
     // public ActionResult Feed(int id)
     // {
