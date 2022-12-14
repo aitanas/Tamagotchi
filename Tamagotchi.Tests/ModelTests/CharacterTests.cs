@@ -25,5 +25,17 @@ namespace Tamagotchi.Tests
       Assert.AreEqual(90, luni.Attention);
       Assert.AreEqual(90, luni.Rest);
     }
+
+
+    [TestMethod]
+    public void Feed_ReplenishFood_Int()
+    {
+      Character luni = new Character("Luni");
+      luni.PassTime();
+      Assert.AreEqual(90, luni.Food);
+      luni.Feed();
+      Assert.AreEqual(100, luni.Food);
+    }
+
   }
 }
