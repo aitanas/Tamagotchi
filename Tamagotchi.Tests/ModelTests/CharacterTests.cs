@@ -21,21 +21,46 @@ namespace Tamagotchi.Tests
     {
       Character luni = new Character("Luni");
       luni.PassTime();
-      Assert.AreEqual(90, luni.Food);
-      Assert.AreEqual(90, luni.Attention);
-      Assert.AreEqual(90, luni.Rest);
+      Assert.AreEqual(typeof(int), luni.Food.GetType());
+      Assert.AreEqual(typeof(int), luni.Attention.GetType());
+      Assert.AreEqual(typeof(int), luni.Rest.GetType());
     }
-
 
     [TestMethod]
     public void Feed_ReplenishFood_Int()
     {
       Character luni = new Character("Luni");
       luni.PassTime();
-      Assert.AreEqual(90, luni.Food);
+      Assert.AreEqual(typeof(int), luni.Food.GetType());
       luni.Feed();
-      Assert.AreEqual(100, luni.Food);
+      Assert.AreEqual(typeof(int), luni.Food.GetType());
     }
 
+    [TestMethod]
+    public void Rest_ReplenishRestInt()
+    {
+      Character luni = new Character("Luni");
+      luni.PassTime();
+      Assert.AreEqual(typeof(int), luni.Rest.GetType());
+      luni.Nap();
+      Assert.AreEqual(typeof(int), luni.Rest.GetType());
+    }
+
+    [TestMethod]
+    public void Attention_ReplenishAttention_Int()
+    {
+      Character luni = new Character("Luni");
+      luni.PassTime();
+      Assert.AreEqual(typeof(int), luni.Attention.GetType());
+      luni.Play();
+      Assert.AreEqual(typeof(int), luni.Attention.GetType());
+    }
+
+    // [TestMethod]
+    // public void CheckIfAlive_FindSignsOfLife_Int()
+    // {
+    //   Character luni = new Character("Luni");
+    //   luni.CheckIfAlive();
+    // }
   }
 }

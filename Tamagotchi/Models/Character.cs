@@ -23,9 +23,10 @@ namespace Tamagotchi.Models
 
     public void PassTime ()
     {
-      Food -= 10;
-      Rest -= 10;
-      Attention -= 10;
+      Random rnd = new Random();
+      Food -= rnd.Next(1, 21);
+      Rest -= rnd.Next(1, 21);
+      Attention -= rnd.Next(1, 21);
     } 
 
     public void Feed ()
@@ -33,15 +34,17 @@ namespace Tamagotchi.Models
       Food += 10;
     } 
 
-        public void Feed ()
+    public void Nap ()
     {
-      Food += 10;
+      Rest += 10;
     } 
 
-    public void Feed ()
+    public void Play ()
     {
-      Food += 10;
+      Attention += 10;
     } 
+
+    
 
   }
 }
