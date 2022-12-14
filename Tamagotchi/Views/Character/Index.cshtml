@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Your Tamagotchis!</title>
+  <link 
+    rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
+  <link
+    rel="stylesheet"
+    href="~/css/styles.css"
+    type="text/css">
+</head>
+<body class="container text-center p-4">
+  @using Tamagotchi.Models;
+  
+  <h1>Your Tamagotchis:</h1>
+
+  @if (Model.Count == 0)
+  {
+    <p>You haven't created any characters yet.</p>
+  }
+  <ul>
+    @* @foreach (ToDoList.Models.Item item in Model) if we don't declare @using *@
+    @foreach (Character character in Model)
+    {
+      <li><a href='character/@character.Id'>@character.Name</a></li>
+    }
+  </ul>
+
+  <a href="/character/new">Add a new item.</a>
+  <form action="/character/delete" method="post">
+    <button type="submit" name="button">Clear All Items</button>
+  </form>
+</body>
+</html>

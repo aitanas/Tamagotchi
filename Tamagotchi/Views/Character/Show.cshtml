@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Your Tamagotchis!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="~/css/styles.css" type="text/css">
+</head>
+<body class="container text-center p-4">
+  <h1>Tamagotchi @Model.Name</h1>
+
+  <p><strong>Food:</strong> @Model.Food / 100</p>
+  <p><strong>Rest:</strong> @Model.Rest / 100</p>
+  <p><strong>Attention:</strong> @Model.Attention / 100</p>
+
+@* <form action="/character/{id}" method="post">
+<button type="submit" value="@Feed" name="feed"></button> </form>
+@Model.Feed(); *@
+  <form action="/character/feed" method="post">
+    <button type="submit" value="@Model.Id" name="id">Feed</button>
+  </form> 
+  <a href='/character/new'>Add another item</a>
+  <a href='/character'>View all items</a>
+</body>
+
+</html>

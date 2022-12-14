@@ -29,9 +29,24 @@ namespace Tamagotchi.Models
       Attention -= rnd.Next(1, 21);
     } 
 
-    public void Feed ()
+    public static int FindAt(int id)
+    { 
+      for(int i = 0; i < _instances.Count; i++)
+      {
+        if (_instances[i].Id == id)
+        {
+          return i;
+        }
+      }
+      return -1;
+    }
+    public static void Feed (int id)
     {
-      Food += 10;
+      int foundId = FindAt(id);
+      if (foundId != -1)
+      {
+        _instances[foundId].Food += 10;
+      }
     } 
 
     public void Nap ()
@@ -43,6 +58,25 @@ namespace Tamagotchi.Models
     {
       Attention += 10;
     } 
+
+    public static List<Character> GetAll()
+    {
+      return _instances;
+    }
+
+    public static Character Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
+
+    public static void Delete(int id)
+    {
+      int foundId = FindAt(id);
+      if (foundId != -1)
+      {
+        _instances.RemoveAt(foundId);
+      }
+    }
 
     public bool CheckIfAlive()
     {

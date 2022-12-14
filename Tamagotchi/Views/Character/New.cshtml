@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <title>Your Tamagotchis!</title>
@@ -8,10 +7,11 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="~/css/styles.css" type="text/css">
 </head>
-<body class="container text-center">
-  <h1>Your Tamagotchi</h1>
-  <a href="/character/new">Hatch new tamagotchi</a>
-  <br>
-  <a href="/character">See list of tamagotchi</a>
+<body class="container text-center p-4">
+  <form action="/character" method="post">
+    <label for="description">Name your tamagotchi:</label>
+    <input id="name" name="name" type="text">
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
