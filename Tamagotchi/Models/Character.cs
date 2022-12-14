@@ -44,7 +44,17 @@ namespace Tamagotchi.Models
       Attention += 10;
     } 
 
-    
+    public bool CheckIfAlive()
+    {
+      if (this.Food <= 0 || this.Rest <= 0 || this.Attention <= 0)
+      {
+        return false;
+      }
+      else
+      {
+        return true;
+      }
+    }
 
   }
 }

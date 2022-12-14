@@ -56,11 +56,13 @@ namespace Tamagotchi.Tests
       Assert.AreEqual(typeof(int), luni.Attention.GetType());
     }
 
-    // [TestMethod]
-    // public void CheckIfAlive_FindSignsOfLife_Int()
-    // {
-    //   Character luni = new Character("Luni");
-    //   luni.CheckIfAlive();
-    // }
+    [TestMethod]
+    public void CheckIfAlive_FindSignsOfLife_Bool()
+    {
+      Character luni = new Character("Luni");
+      luni.Food = 0;
+      bool result = luni.CheckIfAlive();
+      Assert.AreEqual(false, result);
+    }
   }
 }
