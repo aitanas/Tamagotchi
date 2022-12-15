@@ -47,17 +47,35 @@ namespace Tamagotchi.Models
       {
         _instances[foundId].Food += 10;
       }
-    } 
+    }
 
-    public void Nap ()
+    public static void Nap(int id)
     {
-      Rest += 10;
-    } 
+      int foundId = FindAt(id);
+      if (foundId != -1)
+      {
+        _instances[foundId].Rest += 10;
+      }
+    }
 
-    public void Play ()
+    public static void Play(int id)
     {
-      Attention += 10;
-    } 
+      int foundId = FindAt(id);
+      if (foundId != -1)
+      {
+        _instances[foundId].Attention += 10;
+      }
+    }
+
+    // public void Nap ()
+    // {
+    //   Rest += 10;
+    // } 
+
+    // public void Play ()
+    // {
+    //   Attention += 10;
+    // } 
 
     public static List<Character> GetAll()
     {

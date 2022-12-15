@@ -40,32 +40,47 @@ namespace Tamagotchi.Controllers
       return View(foundCharacter);
     }
 
-    [HttpPost("/character/{id}")]
-    public ActionResult Feed(int id)
+    [HttpPost("/character/feed")]
+    public ActionResult Feed(int feed)
     {
-      Character.Feed(id);
-      Character foundCharacter = Character.Find(id);
-      string strID = id.ToString();
-      return RedirectToAction(strID);
+      Character.Feed(feed);
+      Character foundCharacter = Character.Find(feed);
+      return View(foundCharacter);
     }
 
-    [HttpPost("/character/{id}")]
-    public ActionResult Play(int id)
+       [HttpPost("/character/play")]
+    public ActionResult Play(int play)
     {
-      Character.Play(id);
-      Character foundCharacter = Character.Find(id);
-      string strID = id.ToString();
-      return RedirectToAction(strID);
+      Character.Play(play);
+      Character foundCharacter = Character.Find(play);
+      return View(foundCharacter);
     }
 
-    [HttpPost("/character/{id}")]
-    public ActionResult Nap(int id)
+    [HttpPost("/character/nap")]
+    public ActionResult Nap(int nap)
     {
-      Character.Nap(id);
-      Character foundCharacter = Character.Find(id);
-      string strID = id.ToString();
-      return RedirectToAction(strID);
+      Character.Nap(nap);
+      Character foundCharacter = Character.Find(nap);
+      return View(foundCharacter);
     }
+
+    // [HttpPost("/character/{id}")]
+    // public ActionResult Play(int id)
+    // {
+    //   Character.Play(id);
+    //   Character foundCharacter = Character.Find(id);
+    //   string strID = id.ToString();
+    //   return RedirectToAction(strID);
+    // }
+
+    // [HttpPost("/character/{id}")]
+    // public ActionResult Nap(int id)
+    // {
+    //   Character.Nap(id);
+    //   Character foundCharacter = Character.Find(id);
+    //   string strID = id.ToString();
+    //   return RedirectToAction(strID);
+    // }
 
     // [HttpGet("/character/{id}")]
     // public ActionResult Show(int id)
