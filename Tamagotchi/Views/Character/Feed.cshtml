@@ -5,6 +5,8 @@
   <meta http-equiv="Refresh" content=3;url=@Model.Id />
 </head>
 <body class="container text-center p-4">
-  <h1>You feed your tamagotchi.</h1>
-  <img src="https://64.media.tumblr.com/8d2df97328e7860283b938f622bfaf7e/8dee5dcbb581117a-25/s400x600/b204e38c070a8a54de1c6c067499bb59f5775ea6.gif">
+  <h1>Tamagotchi @Model.Name</h1>
+  <p><strong>Food:</strong> @Model.Food / 100 <strong class="pl-4">Rest:</strong> @Model.Rest / 100 <strong class="pl-4">Attention:</strong> @Model.Attention / 100</p>
+  <h2>You feed your tamagotchi.</h2>
+  @await Html.PartialAsync("Frame")
 </body>

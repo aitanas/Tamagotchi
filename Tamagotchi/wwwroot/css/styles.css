@@ -1,3 +1,13 @@
 body {
   background-color: antiquewhite;
 }
+
+.innerdiv {
+  background-image: url(~/assets/tamagotchi-frame.png);
+  background-size: cover;
+}
+
+button {
+  border-radius: 25px;
+}
+

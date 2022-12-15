@@ -67,15 +67,10 @@ namespace Tamagotchi.Models
       }
     }
 
-    // public void Nap ()
-    // {
-    //   Rest += 10;
-    // } 
-
-    // public void Play ()
-    // {
-    //   Attention += 10;
-    // } 
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
 
     public static List<Character> GetAll()
     {
@@ -95,7 +90,6 @@ namespace Tamagotchi.Models
         _instances.RemoveAt(foundId);
       }
     }
-
     public bool CheckIfAlive()
     {
       if (this.Food <= 0 || this.Rest <= 0 || this.Attention <= 0)

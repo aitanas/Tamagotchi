@@ -4,19 +4,15 @@
 <body class="container text-center p-4">
   <h1>Tamagotchi @Model.Name</h1>
 
-  <p><strong>Food:</strong> @Model.Food / 100</p>
-  <p><strong>Rest:</strong> @Model.Rest / 100</p>
-  <p><strong>Attention:</strong> @Model.Attention / 100</p>
+  <p><strong>Food:</strong> @Model.Food / 100 <strong class="pl-4">Rest:</strong> @Model.Rest / 100 <strong class="pl-4">Attention:</strong> @Model.Attention / 100</p>
 
 @* <form action="/character/{id}" method="post">
 <button type="submit" value="@Feed" name="feed"></button> </form>
 @Model.Feed(); *@
 
   <form>
-    <button value="@Model.Id" name="feed" formaction="/character/feed" formmethod="post">Feed</button>
-    <button value="@Model.Id" name="play" formaction="/character/play" formmethod="post">Play</button>
-    <button value="@Model.Id" name="nap" formaction="/character/nap" formmethod="post">Nap</button>
+    <button value="@Model.Id" name="feed" formaction="/character/feed" formmethod="post" class="p-4">Feed</button>
+    <button value="@Model.Id" name="nap" formaction="/character/nap" formmethod="post" class="p-4 m-4">Nap</button>
+    <button value="@Model.Id" name="play" formaction="/character/play" formmethod="post" class="p-4">Play</button>
   </form> 
-  <a href='/character/new'>Add another item</a>
-  <a href='/character'>View all items</a>
 </body>

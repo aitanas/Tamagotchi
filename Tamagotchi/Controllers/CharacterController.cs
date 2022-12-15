@@ -26,12 +26,12 @@ namespace Tamagotchi.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpPost("/characters/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Item.ClearAll();
-    //   return View();
-    // }
+    [HttpPost("/characters/delete")]
+    public ActionResult DeleteAll()
+    {
+      Character.ClearAll();
+      return View();
+    }
 
     [HttpGet("/character/{id}")]
     public ActionResult Show(int id)
@@ -48,7 +48,7 @@ namespace Tamagotchi.Controllers
       return View(foundCharacter);
     }
 
-       [HttpPost("/character/play")]
+    [HttpPost("/character/play")]
     public ActionResult Play(int play)
     {
       Character.Play(play);
